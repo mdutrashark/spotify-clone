@@ -111,7 +111,7 @@ img {
   padding: 25px 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
   border-radius: var(--border-radius-1);
   align-items: center;
   transition: background-color ease 200ms;
