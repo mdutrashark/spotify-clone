@@ -226,6 +226,13 @@ img {
   gap: 25px;
 }
 
+.artist__body-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
 /* @media (max-width: 1280px) {
   .artist__title {
     font-size: 7.5vw;

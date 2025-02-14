@@ -35,7 +35,12 @@ const Artist = () => {
       </div>
 
       <div className="artist__body">
-        <h2>Populares</h2>
+        <div className="artist__body-text">
+          <h2>Populares</h2>
+          <Link to={`/artists`}>
+            <p>Voltar</p>
+          </Link>
+        </div>
 
         <SongList songsArray={songsArrayFromArtist} />
       </div>

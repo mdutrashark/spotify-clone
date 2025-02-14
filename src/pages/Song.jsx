@@ -15,6 +15,21 @@ const Song = () => {
     (currentArtistobj) => currentArtistobj.name === artist
   )[0];
 
+  const songsArrayFromArtist = songsArray.filter(
+    (currentSongsObj) => currentSongsObj.artist === artist
+  );
+
+  const randomIndex = Math.floor(
+    Math.random() * (songsArrayFromArtist.length - 1)
+  );
+
+  const randomIndex2 = Math.floor(
+    Math.random() * (songsArrayFromArtist.length - 1)
+  );
+
+  const randomIdFromArtist = songsArrayFromArtist[randomIndex].id;
+  const randomId2FromArtist = songsArrayFromArtist[randomIndex2].id;
+
   return (
     <div className="song">
       <div className="song__container">
@@ -33,7 +48,11 @@ const Song = () => {
           />
         </Link>
 
-        <Player duration={duration} />
+        <Player
+          duration={duration}
+          randomIdFromArtist={randomIdFromArtist}
+          randomId2FromArtist={randomId2FromArtist}
+        />
 
         <div>
           <p className="song__name">{name}</p>
