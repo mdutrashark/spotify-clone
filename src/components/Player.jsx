@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Player = () => {
+const Player = ({ duration }) => {
   return (
     <div className="player">
       <div className="player__controllers">
@@ -31,7 +31,7 @@ const Player = () => {
           <div className="palyer__bar-progress"></div>
         </div>
 
-        <p>03:03</p>
+        <p>{duration}</p>
       </div>
     </div>
   );

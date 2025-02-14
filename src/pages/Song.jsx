@@ -1,33 +1,43 @@
 import React from "react";
 import Player from "../components/Player";
+import { Link, useParams } from "react-router-dom";
+import { songsArray } from "../assets/database/songs";
+import { artistArray } from "../assets/database/artists";
 
 const Song = () => {
+  const { id } = useParams();
+
+  const { image, name, duration, artist, audio, index } = songsArray.filter(
+    (currentSongObj) => currentSongObj.id === Number(id)
+  )[0];
+
+  const artistObj = artistArray.filter(
+    (currentArtistobj) => currentArtistobj.name === artist
+  )[0];
+
   return (
     <div className="song">
       <div className="song__container">
         <div className="song__image-container">
-          <img
-            src="https://i.scdn.co/image/ab67616d00001e02af41105c5cd91b28f2cf219d"
-            alt="Imagem da Música X"
-          />
+          <img src={image} alt={`Imagem da Música ${name}`} />
         </div>
       </div>
 
       <div className="song__bar">
-        <div className="song__artist-image">
+        <Link to={`/artist/${artistObj.id}`} className="song__artist-image">
           <img
             width={75}
             height={75}
-            src="https://i.scdn.co/image/ab6761610000517477937baabc49dea13c17c706"
-            alt="Imagem do Artista Y"
+            src={artistObj.image}
+            alt={`Imagem do Artista ${artist}`}
           />
-        </div>
+        </Link>
 
-        <Player />
+        <Player duration={duration} />
 
         <div>
-          <p className="song__name">Cantada Boba - Ao vivo</p>
-          <p>Jorge & Mateus</p>
+          <p className="song__name">{name}</p>
+          <p>{artist}</p>
         </div>
       </div>
     </div>
