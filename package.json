@@ -1,0 +1,25 @@
+{
+  "name": "spotify-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix back-end && npm install --prefix front-end && npm run build --prefix front-end",
+    "start": "npm run start --prefix back-end"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdutrashark/spotify-clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mdutrashark/spotify-clone/issues"
+  },
+  "homepage": "https://github.com/mdutrashark/spotify-clone#readme",
+  "dependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
